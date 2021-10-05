@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="content_block_programmatic">
+    <content_block_programmatic action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <condition/>
+        <conditional>false</conditional>
+        <frame/>
+        <logged_on>false</logged_on>
+        <name>Är det fredag?</name>
+        <programmatic_content><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+
+	<g:evaluate>
+		var today = new GlideDateTime();
+		var todaynum = today.getDayOfWeekUTC();
+		
+		var friday = 5;
+		var xd;
+		
+		if (todaynum == friday) {
+		var xd = "FREDAG";
+		} else { 
+		var xd = "INTE FREDAG";
+		}
+		
+		var words = [xd];
+	</g:evaluate>
+		
+	<j:forEach var="jvar_word" items="${words}">
+		<center><h1>Är det fredag?</h1>
+			<b><h3>Det är ${jvar_word}</h3></b></center>
+	</j:forEach>	
+	
+</j:jelly>]]></programmatic_content>
+        <sys_class_name>content_block_programmatic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-10-04 12:50:17</sys_created_on>
+        <sys_id>b7ed18b02f0730106e58f64ef699b672</sys_id>
+        <sys_mod_count>46</sys_mod_count>
+        <sys_name>Är det fredag?</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>content_block_programmatic_b7ed18b02f0730106e58f64ef699b672</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-10-04 13:55:32</sys_updated_on>
+        <two_phase>true</two_phase>
+    </content_block_programmatic>
+</record_update>
